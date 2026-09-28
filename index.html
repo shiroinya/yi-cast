@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>一念｜當下決策</title>
+<style>
+:root{--bg:#f2f0eb;--ink:#191919;--muted:#77736c;--line:#cbc7bf;--paper:#f8f7f3;--accent:#596257}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;letter-spacing:.02em}button{font:inherit;color:inherit}.shell{min-height:100svh;padding:28px clamp(20px,5vw,72px) 44px;display:flex;flex-direction:column}.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px}.brand{font-size:13px;font-weight:700;letter-spacing:.28em}.clock{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted)}main{flex:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(330px,.75fr);gap:clamp(40px,8vw,120px);align-items:center;padding:7vh 0 5vh}.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--muted);margin-bottom:22px}.hero h1{font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(54px,8vw,118px);font-weight:400;line-height:.88;letter-spacing:-.055em;margin:0 0 32px}.hero p{max-width:520px;font-size:14px;line-height:2;color:#5d5a55;margin:0}.panel{border-top:1px solid var(--ink)}.method{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:center;width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;padding:23px 2px;text-align:left;cursor:pointer}.method .no{font:11px ui-monospace,monospace;color:var(--muted)}.method strong{font-size:18px;font-weight:500}.method small{display:block;margin-top:6px;color:var(--muted);font-size:12px;line-height:1.6}.method .mark{font-size:20px;opacity:.35}.method.active .mark{opacity:1}.method.active strong{font-weight:700}.cast-mode{display:grid;grid-template-columns:repeat(3,1fr);margin-top:28px;border:1px solid var(--line)}.cast-choice{border:0;background:transparent;padding:12px 8px;font-size:11px;letter-spacing:.1em;cursor:pointer}.cast-choice+ .cast-choice{border-left:1px solid var(--line)}.cast-choice.active{background:var(--ink);color:var(--paper)}.action{margin-top:14px;width:100%;border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:18px;cursor:pointer;font-size:13px;letter-spacing:.18em;transition:.2s}.action:hover{background:transparent;color:var(--ink)}.hint{font-size:11px;color:var(--muted);line-height:1.7;margin-top:13px}.mode-explain{margin-top:14px;border-top:1px solid var(--line);padding-top:14px}.mode-explain strong{display:block;font-size:12px;color:var(--ink);margin-bottom:5px}.mode-explain p{margin:0;font-size:11px;line-height:1.8;color:var(--muted)}.image-field{display:none;margin-top:18px;min-height:220px;border:1px solid var(--line);position:relative;cursor:crosshair;align-items:center;justify-content:center;text-align:center;padding:28px;overflow:hidden;touch-action:manipulation}.image-field.show{display:flex}.image-field:before,.image-field:after{content:"";position:absolute;background:var(--line);opacity:.6}.image-field:before{width:1px;height:100%;left:50%;top:0}.image-field:after{height:1px;width:100%;top:50%;left:0}.image-field .field-copy{position:relative;z-index:1;background:var(--bg);padding:14px 18px;max-width:280px}.image-field strong{display:block;font-family:Georgia,"Noto Serif TC",serif;font-size:21px;font-weight:400;margin-bottom:8px}.image-field small{font-size:11px;line-height:1.7;color:var(--muted)}.touch-dot{position:absolute;width:14px;height:14px;border:1px solid var(--ink);border-radius:50%;transform:translate(-50%,-50%);z-index:2;background:var(--bg)}.result{display:none;border-top:1px solid var(--ink);margin-top:40px;padding-top:25px;animation:rise .45s ease}.result.show{display:block}.result-head{display:flex;justify-content:space-between;gap:20px;align-items:start}.result .label{font-size:10px;letter-spacing:.2em;color:var(--muted)}.result h2{font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(42px,7vw,78px);font-weight:400;letter-spacing:-.04em;margin:8px 0 8px}.tag{font-size:12px;border:1px solid var(--line);padding:8px 10px;white-space:nowrap}.desc{font-size:14px;line-height:1.9;color:#57544f;max-width:600px}.reading{margin-top:26px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}.reading>div{background:var(--bg);padding:18px}.reading b{display:block;font-size:10px;letter-spacing:.14em;color:var(--muted);margin-bottom:8px}.reading p{margin:0;font-size:13px;line-height:1.85;color:#57544f}.decision{margin-top:24px;border-left:2px solid var(--accent);padding:2px 0 2px 18px;font-family:Georgia,"Noto Serif TC",serif;font-size:18px;line-height:1.75}.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:26px}.meta>div{background:var(--bg);padding:14px}.meta b{display:block;font-size:10px;letter-spacing:.12em;color:var(--muted);margin-bottom:7px}.meta span{font-size:13px}.gua-lines{width:70px;display:flex;flex-direction:column-reverse;gap:6px;margin:12px 0}.yao{height:7px;display:flex;gap:8px}.yao.yang:before{content:"";width:100%;background:var(--ink)}.yao.yin:before,.yao.yin:after{content:"";width:calc(50% - 4px);background:var(--ink)}.yao.moving:before,.yao.moving:after{opacity:.45}.footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:14px;color:var(--muted);font-size:10px;line-height:1.6}.reset{border:0;background:none;text-decoration:underline;text-underline-offset:4px;cursor:pointer;color:inherit;padding:0}@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(max-width:800px){.shell{padding:20px 20px 30px}.top{padding-bottom:13px}main{display:block;padding:9vh 0 8vh}.hero h1{font-size:clamp(58px,22vw,90px);margin-bottom:25px}.hero p{font-size:13px}.panel{margin-top:52px}.method{padding:20px 0}.result{margin-top:32px}.result-head{display:block}.tag{display:inline-block;margin-top:10px}.meta{grid-template-columns:1fr}.footer{flex-direction:column}.clock{font-size:10px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top"><div class="brand">一念 · YI NIAN</div><div class="clock" id="clock"></div></header>
+<main>
+<section class="hero">
+<div class="eyebrow">A MOMENT / A PERSPECTIVE</div>
+<h1>此刻，<br>取一象。</h1>
+<p>心中先定一事，不必輸入、不必留下紀錄。選擇方法，以起念當下為起點，取得一個重新觀看決策的角度。</p>
+<div id="result" class="result"></div>
+</section>
+<aside class="panel" id="panel">
+<button class="method active" data-method="liuren"><span class="no">01</span><span><strong>小六壬</strong><small>月・日・時起課｜六宮快速判讀</small></span><span class="mark">●</span></button>
+<button class="method" data-method="meihua"><span class="no">02</span><span><strong>梅花易數</strong><small>年月日時起卦｜本卦・動爻・變卦</small></span><span class="mark">○</span></button>
+<div class="cast-mode" role="group" aria-label="起卦方式"><button class="cast-choice active" data-castmode="moment">一念</button><button class="cast-choice" data-castmode="time">時間</button><button class="cast-choice" data-castmode="image">取象</button></div>
+<div class="image-field" id="imageField"><div class="field-copy"><strong>心中定事，觸碰此處。</strong><small>不必挑數字。觸碰的位置將成為此刻的取數之一。</small></div></div>
+<button class="action" id="cast">起　卦</button>
+<div class="hint" id="modeHint">一念起卦：先定一事，在念頭明確時按下。按下瞬間的時間細值作為取數；每次重新起念可能得到不同結果。</div>
+<div class="mode-explain">
+<strong id="modeTitle">一念起卦｜問「我此刻這一念」</strong>
+<p id="modeExplain">「好，我現在真的想知道這件事該怎麼看。」<br><br>當心中的問題與念頭明確時，在那一刻起卦，以起念瞬間作為取數依據。每一次新的起念，都代表一個新的觀察起點。</p>
+</div>
+</aside>
+</main>
+<footer class="footer"><span>TRADITIONAL SYMBOLIC DECISION TOOL / LOCAL-ONLY</span><button class="reset" id="reset">重新起念</button></footer>
+</div>
+<script>
+const methods=[...document.querySelectorAll('.method')];let selected='liuren',castMode='moment';
+methods.forEach(b=>b.onclick=()=>{selected=b.dataset.method;methods.forEach(x=>{x.classList.toggle('active',x===b);x.querySelector('.mark').textContent=x===b?'●':'○'})});
+const castChoices=[...document.querySelectorAll('.cast-choice')];
+let imagePoint=null;
+function setMethod(name){selected=name;methods.forEach(x=>{const on=x.dataset.method===name;x.classList.toggle('active',on);x.querySelector('.mark').textContent=on?'●':'○'})}
+function updateCastModeUI(){
+  castChoices.forEach(x=>x.classList.toggle('active',x.dataset.castmode===castMode));
+  const field=document.querySelector('#imageField');
+  field.classList.toggle('show',castMode==='image');
+  document.querySelector('#cast').style.display=castMode==='image'?'none':'block';
+  if(castMode==='moment'){
+    document.querySelector('#modeHint').textContent='一念｜問事：先定一事，在念頭明確時按下；每一次新的起念，都是新的觀察起點。';
+    document.querySelector('#modeTitle').textContent='一念起卦｜問「我此刻這一念」';
+    document.querySelector('#modeExplain').innerHTML='「好，我現在真的想知道這件事該怎麼看。」<br><br>當心中的問題與念頭明確時，在那一刻起卦，以起念瞬間作為取數依據。每一次新的起念，都代表一個新的觀察起點。';
+  }else if(castMode==='time'){
+    document.querySelector('#modeHint').textContent='時間｜觀勢：取起卦此刻的時序之象；不必在事情剛發生時起卦。';
+    document.querySelector('#modeTitle').textContent='時間起卦｜問「此時的勢」';
+    document.querySelector('#modeExplain').innerHTML='「這件事情現在的發展態勢如何？」<br><br>以當下年月日時的時序為依據，觀察事情此刻所處的狀態與發展之勢。同一時辰內再次起卦，結果通常相同。';
+  }else{
+    setMethod('meihua');
+    document.querySelector('#modeHint').textContent='取象｜梅花取數：心中定一事，在留白處憑當下直覺觸碰；觸點位置與當下時間共同取數。';
+    document.querySelector('#modeTitle').textContent='取象起卦｜問「此刻，我所觸之象為何？」';
+    document.querySelector('#modeExplain').innerHTML='「不選一個喜歡的數，只在念頭明確時落下一點。」<br><br>此模式只用於梅花易數。觸碰位置的 X／Y 會轉為取數，與當下時序共同形成卦象；它是本工具的互動取數設計，不宣稱為固定古法。';
+  }
+}
+castChoices.forEach(b=>b.onclick=()=>{castMode=b.dataset.castmode;imagePoint=null;document.querySelectorAll('.touch-dot').forEach(x=>x.remove());updateCastModeUI()});
+methods.forEach(b=>b.addEventListener('click',()=>{if(castMode==='image'&&b.dataset.method==='liuren'){castMode='moment';updateCastModeUI()}}));
+updateCastModeUI();
+
+const pad=n=>String(n).padStart(2,'0');
+function tick(){const d=new Date();document.querySelector('#clock').textContent=`${d.getFullYear()}.${pad(d.getMonth()+1)}.${pad(d.getDate())}  ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`};tick();setInterval(tick,1000);
+// 六宮順序：大安、留連、速喜、赤口、小吉、空亡。此示範採「月上起日、日上起時」常見計數規則。
+const palaces=[
+ ['大安','安定・守成','傳統象意偏向安定、平順與守成。事情的基本盤較穩，重點通常不是急著改變，而是確認既有條件能否持續。','可按原有方向穩健推進，先守住已經成立的條件，再逐步增加投入。','不宜因為局勢看似平穩就過度樂觀，仍要確認成本、期限與承諾。','此刻值得問：什麼是不需要改變、只需要持續做好的？'],
+ ['留連','遲滯・反覆','傳統象意有停滯、牽連、反覆之意。事情未必不能成，但可能卡在資訊、人情、流程或尚未談清楚的條件。','先補資訊、釐清界線、等待關鍵條件明朗；把「為何卡住」找出來。','不宜只因焦躁而催促結果，也不宜在條件未明時做不可逆承諾。','此刻值得問：我是否因為急著得到答案，而忽略了尚未釐清的條件？'],
+ ['速喜','迅速・時機','傳統象意偏向快速、消息與喜訊，常提醒事情可能在短時間內出現變化或窗口。','若條件已大致確認，可採取一個明確而迅速的下一步，把握時效。','不宜把「快」誤解成「不用確認」；越是時間敏感，越要先知道最大風險。','此刻值得問：如果機會窗口很短，我現在最小而有效的行動是什麼？'],
+ ['赤口','溝通・摩擦','傳統象意與口舌、爭執、誤解有關。它常把注意力拉回人際互動、表達方式與立場差異。','重要事項改用可確認的文字、條件與紀錄；先確認彼此理解是否一致。','不宜在情緒高點硬碰硬，也不要只憑一句話推測對方完整意圖。','此刻值得問：真正的問題是事情本身，還是彼此沒有把話說清楚？'],
+ ['小吉','助力・漸進','傳統象意偏向小成、助力與逐步順遂。通常不是一次翻盤的大吉，而是有條件可以往前試。','適合小步試行、低成本驗證，讓實際結果替下一步提供資訊。','不宜因初步順利就一次投入全部資源；保留修正與退出空間。','此刻值得問：能不能先做一個低成本、可回頭的小實驗？'],
+ ['空亡','未明・重查','傳統象意有落空、虛懸、未成形之意。可能代表期待與現況之間仍有落差，或關鍵前提尚不存在。','重新確認目標、資料與假設；必要時暫不定案，等新的有效資訊出現。','不宜為了消除不確定感而硬做決定，也不宜把想像當成已經存在的條件。','此刻值得問：如果我現在相信的前提是錯的，這個決定還成立嗎？']
+];
+function chineseParts(d){
+ // 使用 Intl 取得傳統農曆月日；失敗時直接報錯，不以國曆偷偷替代。
+ const parts=new Intl.DateTimeFormat('zh-TW-u-ca-chinese',{month:'numeric',day:'numeric'}).formatToParts(d);
+ const mp=parts.find(x=>x.type==='month'), dp=parts.find(x=>x.type==='day');
+ const m=mp?+mp.value.replace(/\D/g,''):0, day=dp?+dp.value.replace(/\D/g,''):0;
+ if(!m||!day) throw new Error('此瀏覽器無法取得農曆日期，請改用較新的 Chrome、Safari 或 Edge。');
+ return [m,day];
+}
+function branchHour(h){return Math.floor(((h+1)%24)/2)+1}
+// 年支數：子1、丑2……亥12。2020 為庚子年，作為換算基準。
+function yearBranchNumber(d){return ((d.getFullYear()-2020)%12+12)%12+1}
+function momentSeed(d){return d.getHours()*3600000+d.getMinutes()*60000+d.getSeconds()*1000+d.getMilliseconds()}
+function castLiuren(d,mode){let [m,day]=chineseParts(d),hr=branchHour(d.getHours());let base=(m-1)+(day-1)+(hr-1);let pulse=mode==='moment'?momentSeed(d):0;let idx=(base+(mode==='moment'?pulse%6:0))%6;return {m,day,hr,pulse,idx,p:palaces[idx]}}
+const tri=[null,['乾','天','金'],['兌','澤','金'],['離','火','火'],['震','雷','木'],['巽','風','木'],['坎','水','水'],['艮','山','土'],['坤','地','土']];
+const bits={1:[1,1,1],2:[1,1,0],3:[1,0,1],4:[1,0,0],5:[0,1,1],6:[0,1,0],7:[0,0,1],8:[0,0,0]};
+const hex={
+'1-1':['乾為天','健行・創始','局勢強而主動，重點在方向、責任與持續行動。'], '8-8':['坤為地','承載・順勢','重點在承接現實、配合條件與累積基礎。'],
+'6-4':['水雷屯','初生・艱難','事情正在形成，起步多阻，宜先建立秩序與資源。'], '7-6':['山水蒙','未知・求明','資訊或經驗不足，宜先學習、求證，不急著定論。'],
+'6-1':['水天需','等待・準備','條件尚未成熟，等待不是停滯，而是準備與觀察。'], '1-6':['天水訟','爭議・界線','立場可能衝突，宜先釐清規則、證據與界線。'],
+'8-6':['地水師','組織・紀律','需要資源整合、分工與紀律，單憑熱情不夠。'], '6-8':['水地比','連結・合作','重點在人與人的連結、信任以及是否適合同行。'],
+'5-1':['風天小畜','積蓄・小進','力量正在累積，適合小幅推進，不宜急求大成。'], '1-2':['天澤履','謹慎・踐行','可以前進，但必須留意規則、分寸與每一步的落點。'],
+'8-1':['地天泰','通達・交流','上下條件較能流通，適合推進並維持良好交換。'], '1-8':['天地否','阻隔・不通','條件彼此阻隔，先處理結構問題，不宜只靠加力。'],
+'1-3':['天火同人','同道・協作','共同目標與公開溝通重要，適合尋找真正同路的人。'], '3-1':['火天大有','豐盛・掌握','資源較充足，重點轉為如何正確使用與承擔。'],
+'8-7':['地山謙','謙抑・平衡','降低姿態、保留餘地，反而更有利於長期推進。'], '4-8':['雷地豫','預備・動員','氣勢開始形成，宜把熱情轉成具體準備與行動。'],
+'2-4':['澤雷隨','順應・跟隨','觀察局勢與可信的人事，順勢調整比固執原案重要。'], '7-5':['山風蠱','整頓・修復','舊問題需要處理，先修補根本，再談新的擴張。'],
+'8-2':['地澤臨','接近・管理','機會逐漸靠近，宜主動接觸，同時保持管理與節度。'], '5-8':['風地觀','觀察・全局','先拉開距離看全局，理解模式後再決定介入方式。'],
+'3-4':['火雷噬嗑','突破・處理','有障礙需要明確處理，迴避反而會讓問題延長。'], '7-3':['山火賁','修飾・呈現','形式與表達很重要，但外觀仍應服務於實質內容。'],
+'7-8':['山地剝','剝落・收縮','基礎正在減弱，宜減少消耗、保留核心，不急擴張。'], '8-4':['地雷復','返回・重啟','事情有重新開始的契機，宜回到核心重新校準。'],
+'1-4':['天雷無妄','真實・不妄','少做過度算計，回到事實與正當動機，避免強求結果。'], '7-1':['山天大畜','蓄力・止進','有力量但暫宜收斂，累積能力與資源後再發動。'],
+'7-4':['山雷頤','養成・節制','關注輸入與養成：你餵養什麼，最後就形成什麼。'], '2-5':['澤風大過','過重・承壓','負荷已偏大，應檢查結構能否承受，必要時減壓。'],
+'6-6':['坎為水','險阻・反覆','風險或不確定性較高，宜一步一驗證，不可冒進。'], '3-3':['離為火','明辨・依附','需要看清事實，也要辨認自己依附的是什麼條件。'],
+'2-7':['澤山咸','感應・互動','彼此影響正在形成，宜觀察真實回應而非單方面想像。'], '4-5':['雷風恆','持續・常道','重點在能否長久維持，選擇可持續的做法勝過短期刺激。'],
+'1-7':['天山遯','退讓・避鋒','退一步可能是策略，不必把暫退等同失敗。'], '4-1':['雷天大壯','強勢・節制','力量很強，更需要節制；能做不代表現在就該做到滿。'],
+'3-8':['火地晉','進展・顯明','條件有向前發展之勢，適合讓成果逐步被看見。'], '8-3':['地火明夷','藏明・自保','外部環境不利於完全展露，先保護核心與判斷力。'],
+'5-3':['風火家人','內部・秩序','先處理內部角色、規則與責任，再向外擴張。'], '3-2':['火澤睽','分歧・異中求同','觀點不同未必不能合作，先找可共同成立的小部分。'],
+'6-7':['水山蹇','阻難・轉向','前路有阻，宜找支援、換路徑，而非只增加力氣。'], '4-6':['雷水解','解除・鬆綁','緊張有機會解除，宜處理積壓問題並恢復流動。'],
+'7-2':['山澤損','減法・取捨','做減法以換取核心價值，問清楚什麼值得保留。'], '5-4':['風雷益','增益・投入','投入可能帶來增長，但資源應放在真正有效的位置。'],
+'2-1':['澤天夬','決斷・公開','到了需要明確表態或處理的階段，但決斷仍要有依據。'], '1-5':['天風姤','相遇・突發','突然出現的人事物影響可能很大，先辨識再投入。'],
+'2-8':['澤地萃','聚集・整合','資源與人開始聚集，重點是共同核心與組織方式。'], '8-5':['地風升','累積・上升','適合一步一步累積，不求跳躍式成果。'],
+'2-6':['澤水困','受限・困頓','資源或空間受限，先保留核心能力，避免無效消耗。'], '6-5':['水風井','根本・供給','回到長期可用的基礎設施、能力與資源來源。'],
+'2-3':['澤火革','變革・更新','舊方式已到需要改變的節點，但改變要有時機與共識。'], '3-5':['火風鼎','轉化・成器','資源可以重新組合成新價值，重點在制度與承載。'],
+'4-4':['震為雷','震動・啟動','突發變化促使行動，先穩住再處理真正重要的事。'], '7-7':['艮為山','停止・界線','適時停止也是行動；先確認哪裡應停、哪裡再進。'],
+'5-7':['風山漸','漸進・次序','事情宜循序發展，尊重階段與次序比追求速度重要。'], '4-2':['雷澤歸妹','關係・位置','關係與角色可能尚未完全對位，承諾前先確認位置。'],
+'4-3':['雷火豐','豐盛・高峰','資訊與資源很多，越在高峰越要看見被遮蔽的部分。'], '3-7':['火山旅','旅途・暫居','局勢偏流動，宜保持彈性，不把暫時條件當永久依靠。'],
+'5-5':['巽為風','滲透・柔入','以持續、柔性的方式進入，比一次強推更有效。'], '2-2':['兌為澤','交流・喜悅','溝通與互惠是核心，注意真誠而非只追求討好。'],
+'5-6':['風水渙','渙散・疏通','僵局需要鬆動與重新連結，把分散力量重新聚焦。'], '6-2':['水澤節','節制・規則','建立限制與規則能保護資源，關鍵是適度而非僵化。'],
+'5-2':['風澤中孚','誠信・可信','信任與一致性是核心，先確認言行與承諾是否相符。'], '4-7':['雷山小過','小事・修正','適合小幅調整與細節修正，不宜把動作放得過大。'],
+'6-3':['水火既濟','已成・守成','事情已有成果，但完成之後更需要維護與防止鬆懈。'], '3-6':['火水未濟','未成・續進','尚差最後整合，別把接近完成誤認為真正完成。']
+};
+
+function mod8(n){return ((n-1)%8)+1}
+function castMeihua(d,mode,point=null){let [m,day]=chineseParts(d),y=yearBranchNumber(d),hr=branchHour(d.getHours()),pulse=mode==='moment'?momentSeed(d):0;let px=point?point.x:0,py=point?point.y:0;let upper=mod8(y+m+day+(mode==='moment'?pulse%8:0)+(mode==='image'?px:0)),lower=mod8(y+m+day+hr+(mode==='moment'?Math.floor(pulse/8)%8:0)+(mode==='image'?py:0)),moving=((y+m+day+hr-1+(mode==='moment'?Math.floor(pulse/64)%6:0)+(mode==='image'?(px+py):0))%6)+1;let lines=[...bits[lower],...bits[upper]],changed=[...lines];changed[moving-1]=changed[moving-1]?0:1;let findTri=a=>+Object.keys(bits).find(k=>bits[k].join()==a.join());let newLower=findTri(changed.slice(0,3)),newUpper=findTri(changed.slice(3,6));return {y,m,day,hr,pulse,px,py,upper,lower,moving,lines,newUpper,newLower}}
+function linesHTML(lines,moving){return `<div class="gua-lines">${lines.map((v,i)=>`<div class="yao ${v?'yang':'yin'} ${i+1===moving?'moving':''}"></div>`).join('')}</div>`}
+function render(){
+ const d=new Date(),r=document.querySelector('#result');
+ try{
+ if(selected==='liuren'){
+  let x=castLiuren(d,castMode),p=x.p;
+  r.innerHTML=`<div class="result-head"><div><div class="label">小六壬 · ${castMode==='moment'?'一念起卦':'時間起卦'}</div><h2>${p[0]}</h2></div><span class="tag">${p[1]}</span></div>
+  <p class="desc">${p[2]}</p>
+  <div class="reading"><div><b>適合的應對</b><p>${p[3]}</p></div><div><b>需要留意</b><p>${p[4]}</p></div></div>
+  <div class="decision">${p[5]}</div>
+  <div class="meta"><div><b>起法</b><span>${castMode==='moment'?'一念取數':'月日時'}</span></div><div><b>農曆</b><span>${x.m} 月 ${x.day} 日</span></div><div><b>時序</b><span>第 ${x.hr} 時支</span></div></div>`;
+ }else{
+  let x=castMeihua(d,castMode,imagePoint),u=tri[x.upper],l=tri[x.lower],nu=tri[x.newUpper],nl=tri[x.newLower];
+  let h=hex[`${x.upper}-${x.lower}`]||[`${u[1]}${l[1]}`,'觀象・辨勢','先從上下卦的性質與正在變動的位置觀察局勢。'];
+  let vh=hex[`${x.newUpper}-${x.newLower}`]||[`${nu[1]}${nl[1]}`,'轉化・後勢','變卦可視為條件改變後值得觀察的後續方向。'];
+  let body=x.moving<=3?u:l, use=x.moving<=3?l:u;
+  let movingText=x.moving<=3?'下卦為用、上卦為體':'上卦為用、下卦為體';
+  r.innerHTML=`<div class="result-head"><div><div class="label">梅花易數 · ${castMode==='moment'?'一念起卦':castMode==='time'?'時間起卦':'取象起卦'}</div><h2>${h[0]}</h2></div><span class="tag">第 ${x.moving} 爻動</span></div>
+  ${linesHTML(x.lines,x.moving)}
+  <p class="desc"><b>${h[1]}</b>｜${h[2]}</p>
+  <div class="reading"><div><b>本卦｜現在的局勢</b><p>上卦「${u[0]}・${u[1]}」，下卦「${l[0]}・${l[1]}」。${h[2]}</p></div><div><b>動爻｜正在改變</b><p>第 ${x.moving} 爻動。依常見體用取法，${movingText}；體為「${body[0]}・${body[1]}」，用為「${use[0]}・${use[1]}」。可把注意力放在：哪一項外在條件正在作用於事情核心？</p></div><div><b>變卦｜後續觀察</b><p>變為「${vh[0]}」—— <b>${vh[1]}</b>。${vh[2]}</p></div></div>
+  <div class="decision">不要只問吉凶：把「${h[1]}」與「${vh[1]}」放在一起看——你現在需要維持什麼，又有哪些條件正在迫使事情轉向？</div>
+  <div class="meta"><div><b>起法</b><span>${castMode==='moment'?'一念取數':castMode==='time'?'年月日時':`觸點 ${x.px}・${x.py}`}</span></div><div><b>本卦／變卦</b><span>${h[0]} → ${vh[0]}</span></div><div><b>體／用</b><span>${body[0]}／${use[0]}</span></div></div>`;
+ }
+ r.classList.add('show');document.querySelector('#panel').style.opacity='.48';document.querySelector('#cast').disabled=true;if(innerWidth<801)r.scrollIntoView({behavior:'smooth',block:'start'});
+ }catch(err){r.innerHTML=`<div class="label">無法起卦</div><p class="desc">${err.message}</p>`;r.classList.add('show');}
+}
+
+document.querySelector('#imageField').addEventListener('pointerdown',e=>{
+  if(castMode!=='image') return;
+  const box=e.currentTarget.getBoundingClientRect();
+  const rx=Math.max(0,Math.min(1,(e.clientX-box.left)/box.width));
+  const ry=Math.max(0,Math.min(1,(e.clientY-box.top)/box.height));
+  imagePoint={x:Math.floor(rx*999)+1,y:Math.floor(ry*999)+1};
+  e.currentTarget.querySelectorAll('.touch-dot').forEach(x=>x.remove());
+  const dot=document.createElement('span');dot.className='touch-dot';dot.style.left=`${rx*100}%`;dot.style.top=`${ry*100}%`;e.currentTarget.appendChild(dot);
+  render();
+});
+
+document.querySelector('#cast').onclick=render;document.querySelector('#reset').onclick=()=>{imagePoint=null;document.querySelectorAll('.touch-dot').forEach(x=>x.remove());document.querySelector('#result').classList.remove('show');document.querySelector('#result').innerHTML='';document.querySelector('#panel').style.opacity='1';document.querySelector('#cast').disabled=false;scrollTo({top:0,behavior:'smooth'})};
+</script>
+</body>
+</html>
